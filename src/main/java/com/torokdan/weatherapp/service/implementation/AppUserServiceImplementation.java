@@ -29,10 +29,10 @@ public class AppUserServiceImplementation implements AppUserService {
 
   private void checkUserNameAndEmail(AppUserRequestDto toCheck) {
     if (userRepository.existsByUsername(toCheck.getUsername())) {
-      throw new UsernameAlreadyExistsException();
+      throw new UsernameAlreadyExistsException(toCheck.getUsername());
     }
     if (userRepository.existsByEmail(toCheck.getEmail())) {
-      throw new EmailAlreadyExistsException();
+      throw new EmailAlreadyExistsException(toCheck.getEmail());
     }
   }
 }
