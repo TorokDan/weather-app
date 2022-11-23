@@ -3,6 +3,7 @@ package com.torokdan.weatherapp.controller;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.service.AppUserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,4 +23,11 @@ public class AppUserController {
   public ResponseEntity register(@RequestBody AppUserRequestDto user) {
     return ResponseEntity.ok(userService.createUser(user));
   }
+
+  @GetMapping("/all")
+  public ResponseEntity list() {
+    return ResponseEntity.ok(userService.listUsers());
+  }
+
+
 }

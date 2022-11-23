@@ -1,10 +1,12 @@
 package com.torokdan.weatherapp.model;
 
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
+import com.torokdan.weatherapp.service.RoleService;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class AppUser {
@@ -16,13 +18,17 @@ public class AppUser {
   private String email;
   private String password;
 
+  @ManyToOne
+  private Role role;
+
   public AppUser() {
   }
 
-  public AppUser(String username, String email, String password) {
+  public AppUser(String username, String email, String password, Role role) {
     this.username = username;
     this.email = email;
     this.password = password;
+    this.role = role;
   }
 
   public long getId() {
@@ -41,7 +47,8 @@ public class AppUser {
     return password;
   }
 
-  public static AppUser from(AppUserRequestDto requestDto) {
-    return new AppUser(requestDto.getUsername(), requestDto.getEmail(), requestDto.getPassword());
+  public Role getRole() {
+    return new Role(RoleType.USER);
   }
+
 }
