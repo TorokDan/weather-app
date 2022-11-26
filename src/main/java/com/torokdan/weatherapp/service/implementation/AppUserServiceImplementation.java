@@ -17,6 +17,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -24,17 +25,21 @@ public class AppUserServiceImplementation implements AppUserService, UserDetails
 
   private final AppUserRepository userRepository;
   private final ModelCreator modelCreator;
+  private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-  public AppUserServiceImplementation(AppUserRepository userRepository, ModelCreator modelCreator) {
+  public AppUserServiceImplementation(AppUserRepository userRepository, ModelCreator modelCreator,
+      BCryptPasswordEncoder bCryptPasswordEncoder) {
 
     this.userRepository = userRepository;
     this.modelCreator = modelCreator;
+    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
   }
 
   @Override
   public AppUserResponseDto createUser(AppUserRequestDto request) {
     checkUserNameAndEmail(request);
     AppUser user = modelCreator.createAppUser(request);
+    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
     userRepository.save(user);
     return modelCreator.createAppUserResponseDto(user);
   }

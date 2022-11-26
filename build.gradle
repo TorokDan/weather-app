@@ -27,6 +27,7 @@ dependencies {
 
     // For the .env
     implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
     // Tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

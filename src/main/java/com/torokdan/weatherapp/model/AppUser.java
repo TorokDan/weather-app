@@ -52,4 +52,7 @@ public class AppUser {
     return new Role(RoleType.USER);
   }
 
+  public void setPassword(String password) {
+    this.password = password;
+  }
 }
