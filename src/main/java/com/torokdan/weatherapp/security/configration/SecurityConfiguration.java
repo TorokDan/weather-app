@@ -45,7 +45,7 @@ public class SecurityConfiguration {
         .csrf().disable()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
-        .authorizeRequests().antMatchers(HttpMethod.GET, "/hello").hasAnyRole()
+        .authorizeRequests().antMatchers(HttpMethod.GET, "/hello").hasAuthority("USER")
         .and()
         .authorizeRequests().antMatchers(HttpMethod.GET, "/**").permitAll()
         .and()
