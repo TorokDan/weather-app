@@ -1,9 +1,8 @@
 package com.torokdan.weatherapp.configuration;
 
-import com.torokdan.weatherapp.model.Role;
+import com.torokdan.weatherapp.model.entity.Role;
 import com.torokdan.weatherapp.model.RoleType;
 import com.torokdan.weatherapp.service.RoleService;
-import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 

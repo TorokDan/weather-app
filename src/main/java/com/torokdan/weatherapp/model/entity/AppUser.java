@@ -1,12 +1,10 @@
-package com.torokdan.weatherapp.model;
+package com.torokdan.weatherapp.model.entity;
 
-import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
-import com.torokdan.weatherapp.service.RoleService;
+import com.torokdan.weatherapp.model.RoleType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity

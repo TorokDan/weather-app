@@ -1,11 +1,10 @@
 package com.torokdan.weatherapp.service.implementation;
 
 import com.torokdan.weatherapp.exception.RoleNotFoundException;
-import com.torokdan.weatherapp.model.Role;
+import com.torokdan.weatherapp.model.entity.Role;
 import com.torokdan.weatherapp.model.RoleType;
 import com.torokdan.weatherapp.repository.RoleRepository;
 import com.torokdan.weatherapp.service.RoleService;
-import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,11 +1,11 @@
-package com.torokdan.weatherapp.model;
+package com.torokdan.weatherapp.model.entity;
 
+import com.torokdan.weatherapp.model.RoleType;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity

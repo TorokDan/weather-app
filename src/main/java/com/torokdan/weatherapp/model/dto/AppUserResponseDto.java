@@ -1,7 +1,6 @@
 package com.torokdan.weatherapp.model.dto;
 
-import com.torokdan.weatherapp.model.AppUser;
-import com.torokdan.weatherapp.model.Role;
+import com.torokdan.weatherapp.model.entity.Role;
 
 public class AppUserResponseDto {
   private long id;

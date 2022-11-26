@@ -1,10 +1,9 @@
 package com.torokdan.weatherapp.service.implementation;
 
-import com.torokdan.weatherapp.model.AppUser;
+import com.torokdan.weatherapp.model.entity.AppUser;
 import com.torokdan.weatherapp.model.RoleType;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.model.dto.AppUserResponseDto;
-import com.torokdan.weatherapp.service.AppUserService;
 import com.torokdan.weatherapp.service.ModelCreator;
 import com.torokdan.weatherapp.service.RoleService;
 import org.springframework.stereotype.Service;

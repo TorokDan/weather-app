@@ -3,7 +3,7 @@ package com.torokdan.weatherapp.service.implementation;
 import com.torokdan.weatherapp.exception.EmailAlreadyExistsException;
 import com.torokdan.weatherapp.exception.NoUserFoundException;
 import com.torokdan.weatherapp.exception.UsernameAlreadyExistsException;
-import com.torokdan.weatherapp.model.AppUser;
+import com.torokdan.weatherapp.model.entity.AppUser;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.model.dto.AppUserResponseDto;
 import com.torokdan.weatherapp.repository.AppUserRepository;

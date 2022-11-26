@@ -1,7 +1,6 @@
 package com.torokdan.weatherapp.repository;
 
-import com.torokdan.weatherapp.model.Role;
-import com.torokdan.weatherapp.model.RoleType;
+import com.torokdan.weatherapp.model.entity.Role;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
