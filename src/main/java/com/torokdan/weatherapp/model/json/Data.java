@@ -1,7 +1,6 @@
-package com.torokdan.weatherapp.model;
+package com.torokdan.weatherapp.model.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.util.Arrays;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
@@ -24,11 +23,10 @@ public class Data {
     this.days = days;
   }
 
+
+
   @Override
   public String toString() {
-    return "Data{" +
-        "address='" + address + '\'' +
-        ", days=" + days[0].toString() +
-        '}';
+    return String.format("Today (%s), in %s there is %s Fahrenheit, which is %s Celsius.", days[0].getDatetime(), address, Math.round(days[0].getTemp()), Math.round((days[0].getTemp() - 32) / 1.8));
   }
 }

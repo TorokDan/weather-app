@@ -1,8 +1,6 @@
 package com.torokdan.weatherapp.model;
 
-import com.torokdan.weatherapp.configuration.WeatherAppProperties;
-import java.util.Date;
-import org.springframework.beans.factory.annotation.Value;
+import com.torokdan.weatherapp.configuration.property.WeatherAppProperties;
 
 public class Url {
 

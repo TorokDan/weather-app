@@ -1,4 +1,4 @@
-package com.torokdan.weatherapp.configuration;
+package com.torokdan.weatherapp.configuration.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

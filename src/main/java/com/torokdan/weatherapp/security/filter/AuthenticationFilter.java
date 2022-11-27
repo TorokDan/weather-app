@@ -5,7 +5,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.torokdan.weatherapp.configuration.SecurityProperties;
+import com.torokdan.weatherapp.configuration.property.SecurityProperties;
 import java.io.IOException;
 import java.util.Date;
 import javax.servlet.FilterChain;

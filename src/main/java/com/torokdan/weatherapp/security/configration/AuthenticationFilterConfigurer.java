@@ -1,6 +1,6 @@
 package com.torokdan.weatherapp.security.configration;
 
-import com.torokdan.weatherapp.configuration.SecurityProperties;
+import com.torokdan.weatherapp.configuration.property.SecurityProperties;
 import com.torokdan.weatherapp.security.filter.AuthenticationFilter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

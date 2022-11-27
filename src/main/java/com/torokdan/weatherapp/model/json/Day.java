@@ -1,4 +1,4 @@
-package com.torokdan.weatherapp.model;
+package com.torokdan.weatherapp.model.json;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -21,6 +21,10 @@ public class Day {
 
   public void setTemp(double temp) {
     this.temp = temp;
+  }
+
+  public double getCelsius() {
+    return Math.round((temp - 32) / 1.8);
   }
 
   @Override

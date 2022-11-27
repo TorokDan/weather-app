@@ -1,7 +1,7 @@
 package com.torokdan.weatherapp;
 
-import com.torokdan.weatherapp.configuration.SecurityProperties;
-import com.torokdan.weatherapp.configuration.WeatherAppProperties;
+import com.torokdan.weatherapp.configuration.property.SecurityProperties;
+import com.torokdan.weatherapp.configuration.property.WeatherAppProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

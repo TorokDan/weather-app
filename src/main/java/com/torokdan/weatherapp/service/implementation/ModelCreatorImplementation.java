@@ -1,9 +1,11 @@
 package com.torokdan.weatherapp.service.implementation;
 
+import com.torokdan.weatherapp.model.dto.DataResponseDto;
 import com.torokdan.weatherapp.model.entity.AppUser;
 import com.torokdan.weatherapp.model.RoleType;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.model.dto.AppUserResponseDto;
+import com.torokdan.weatherapp.model.json.Data;
 import com.torokdan.weatherapp.service.ModelCreator;
 import com.torokdan.weatherapp.service.RoleService;
 import org.springframework.stereotype.Service;
@@ -29,5 +31,11 @@ public class ModelCreatorImplementation implements ModelCreator {
   @Override
   public AppUserResponseDto createAppUserResponseDto(AppUser user) {
     return new AppUserResponseDto(user.getId(), user.getUsername(), user.getEmail(), user.getRole());
+  }
+
+  @Override
+  public DataResponseDto createDataResponseDto(Data data) {
+    return new DataResponseDto(data.getAddress(), data.getDays()[0].getDatetime(), data.getDays()[0].getTemp(),
+        data.getDays()[0].getCelsius());
   }
 }
