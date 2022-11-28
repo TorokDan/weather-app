@@ -1,7 +1,7 @@
 package com.torokdan.weatherapp.model.entity;
 
-import com.torokdan.weatherapp.exception.LocationAlreadyExistException;
-import com.torokdan.weatherapp.exception.LocationNotExistException;
+import com.torokdan.weatherapp.exception.LocationAlreadyAddedToTheUserException;
+import com.torokdan.weatherapp.exception.LocationNotInTheListException;
 import com.torokdan.weatherapp.model.RoleType;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,20 +63,18 @@ public class AppUser {
     return locations;
   }
 
-  public void addLocation(String location) {
-    Location loc = new Location(location);
-    if (locations.contains(loc)) {
-      throw new LocationAlreadyExistException(loc.getName());
+  public void addLocation(Location location) {
+    if (locations.contains(location)) {
+      throw new LocationAlreadyAddedToTheUserException(location.getName());
     }
-    locations.add(loc);
+    locations.add(location);
   }
 
-  public void removeLocation(String location) {
-    Location loc = new Location(location);
-    if (locations.contains(loc)) {
-      throw new LocationNotExistException(loc.getName());
+  public void removeLocation(Location location) {
+    if (locations.contains(location)) {
+      throw new LocationNotInTheListException(location.getName());
     }
-    locations.remove(loc);
+    locations.remove(location);
   }
 
   public void setPassword(String password) {

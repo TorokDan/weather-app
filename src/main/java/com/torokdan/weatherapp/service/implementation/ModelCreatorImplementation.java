@@ -1,10 +1,12 @@
 package com.torokdan.weatherapp.service.implementation;
 
 import com.torokdan.weatherapp.model.dto.DataResponseDto;
+import com.torokdan.weatherapp.model.dto.LocationRequestDto;
 import com.torokdan.weatherapp.model.entity.AppUser;
 import com.torokdan.weatherapp.model.RoleType;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.model.dto.AppUserResponseDto;
+import com.torokdan.weatherapp.model.entity.Location;
 import com.torokdan.weatherapp.model.json.Data;
 import com.torokdan.weatherapp.service.ModelCreator;
 import com.torokdan.weatherapp.service.RoleService;
@@ -37,5 +39,10 @@ public class ModelCreatorImplementation implements ModelCreator {
   public DataResponseDto createDataResponseDto(Data data) {
     return new DataResponseDto(data.getAddress(), data.getDays()[0].getDatetime(), data.getDays()[0].getTemp(),
         data.getDays()[0].getCelsius());
+  }
+
+  @Override
+  public Location createLocation(LocationRequestDto locationRequestDto) {
+    return new Location(locationRequestDto.getName());
   }
 }
