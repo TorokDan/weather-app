@@ -33,8 +33,8 @@ public class UserLocationController {
     locationService.addLocationToUser(userName, location);
   }
 
-  @DeleteMapping("/{username}/{locationname}")
-  public ResponseEntity deleteLocationFromUser(@PathVariable String username, @PathVariable String locationname) {
-    return ResponseEntity.ok().body(locationService.deleteLocationFromUser(username, locationname));
+  @DeleteMapping("/{userName}/{locationName}")
+  public ResponseEntity deleteLocationFromUser(@PathVariable String userName, @PathVariable String locationName) {
+    return ResponseEntity.ok().body(locationService.deleteLocationFromUser(userName, locationName));
   }
 }
