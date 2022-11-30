@@ -4,6 +4,7 @@ public class LocationRequestDto {
 
   private String name;
 
+
   public String getName() {
     return name;
   }

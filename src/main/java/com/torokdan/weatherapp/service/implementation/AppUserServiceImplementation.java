@@ -3,6 +3,7 @@ package com.torokdan.weatherapp.service.implementation;
 import com.torokdan.weatherapp.exception.EmailAlreadyExistsException;
 import com.torokdan.weatherapp.exception.NoUserFoundException;
 import com.torokdan.weatherapp.exception.UsernameAlreadyExistsException;
+import com.torokdan.weatherapp.model.dto.DeleteLocationFromUserResponseDto;
 import com.torokdan.weatherapp.model.entity.AppUser;
 import com.torokdan.weatherapp.model.dto.AppUserRequestDto;
 import com.torokdan.weatherapp.model.dto.AppUserResponseDto;
@@ -60,6 +61,20 @@ public class AppUserServiceImplementation implements AppUserService, UserDetails
         .orElseThrow(() ->new UsernameNotFoundException(userName));
     user.addLocation(location);
     userRepository.save(user);
+  }
+
+  @Override
+  public AppUser findUser(String name) {
+    return userRepository.findByUsername(name)
+        .orElseThrow(() -> new UsernameNotFoundException(name));
+  }
+
+  @Override
+  public DeleteLocationFromUserResponseDto removeLocationFromUser(String userName, Location location) {
+    AppUser user = findUser(userName);
+    user.removeLocation(location);
+    userRepository.save(user);
+    return modelCreator.createDeleteLocationFromUserResponseDto(user, location);
   }
 
   private void checkUserNameAndEmail(AppUserRequestDto toCheck) {

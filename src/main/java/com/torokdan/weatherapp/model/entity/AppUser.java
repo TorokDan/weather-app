@@ -71,7 +71,7 @@ public class AppUser {
   }
 
   public void removeLocation(Location location) {
-    if (locations.contains(location)) {
+    if (!locations.contains(location)) {
       throw new LocationNotInTheListException(location.getName());
     }
     locations.remove(location);

@@ -1,10 +1,9 @@
 package com.torokdan.weatherapp.controller;
 
 import com.torokdan.weatherapp.model.dto.LocationRequestDto;
-import com.torokdan.weatherapp.service.AppUserService;
 import com.torokdan.weatherapp.service.LocationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +19,13 @@ public class LocationController {
     this.locationService = locationService;
   }
 
-  @PostMapping("/{userName}")
-  public void addLocation(@PathVariable String userName, @RequestBody LocationRequestDto location) {
+  @GetMapping("/all")
+  public ResponseEntity list() {
+    return ResponseEntity.ok().body(locationService.listLocations());
   }
 
-
+  @PostMapping()
+  public void add(@RequestBody LocationRequestDto location) {
+    locationService.createLocation(location);
+  }
 }
